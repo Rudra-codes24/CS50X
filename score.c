@@ -1,9 +1,18 @@
 #include <stdio.h>
 int main(void)
 {
-    int scaore1 = 72;
-    int score2 = 73;
-    int score3 = 33;
+    int scores[3];
 
-    printf("Average: %i\n", (scaore1 + score2 + score3) / 3);
+    for (int i = 0; i < 3; i++)
+    {
+        printf("enter a number %d: ", i + 1);
+        scanf("%d", &scores[i]);
+    }
+
+    int sum = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        sum += scores[i];
+    }
+    printf("average: %f\n", sum / 3.0);
 }
