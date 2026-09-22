@@ -1,12 +1,15 @@
 #include <stdio.h>
-int main(void)
-{
-    char name[5];
+#include <string.h>
 
-    printf("what is your name? ");
-    fgets(name , sizeof(name), stdin);
+int main() {
+    char name[50];
 
-    printf("hello %s\n", name);
-    printf("this lines prints right after, no gap\n");
+    printf("What is your name? ");
+    fgets(name, sizeof(name), stdin);
 
+    name[strcspn(name, "\n")] = '\0';  // newline hata diya
+
+    printf("Hello %s\n", name);
+
+    return 0;
 }
